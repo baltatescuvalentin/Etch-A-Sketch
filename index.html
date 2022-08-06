@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Etch-A-Sketch</title>
+        <link rel="stylesheet" href="./style.css">
+        <script src="https://kit.fontawesome.com/3ef20e5b59.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="header">Etch-A-Sketch</div>
+
+        <div class="container"> 
+            <div class="controller">
+                <button>Color pen</button>
+                <button class="color_btn"></button>
+                <button>Erase</button>
+                <button>Rainbow</button>
+                <button>Shading</button>
+                <button>Clear</button>
+                <p id="slider_value">1x1</p>
+                <input type="range" min="1" max="60" value="1" class="slider">
+
+            </div>    
+
+            <div class="canvas grid_container">
+                    <div class="grid-item">1</div>
+                    <div class="grid-item">2</div>
+                    <div class="grid-item">3</div>  
+                    <div class="grid-item">4</div>
+                    <div class="grid-item">5</div>
+                    <div class="grid-item">6</div>  
+                    <div class="grid-item">7</div>
+                    <div class="grid-item">8</div>
+                    <div class="grid-item">9</div>        
+            </div>
+        </div>
+
+        <footer>
+            <h3 class="footer_content">Copyright©baltatescuvalentin 
+                <script>
+                    document.write(new Date().getFullYear())
+                </script>
+                <a href="https://github.com/baltatescuvalentin" target="_blank">
+                    <i class="fa-brands fa-github" ></i>
+                </a>
+            </h3>
+        </footer>
+        <script src="./script.js"></script>
+    </body>
+</html>
