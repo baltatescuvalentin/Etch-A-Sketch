@@ -10,8 +10,15 @@ body {
     text-align: center;
 }
 
+.header, footer {
+    margin: 0;
+    padding: 0;
+    left: 0;
+    right: 0;
+}
+
 .header {
-    padding: 24px;
+    padding: 18px;
     font-size: 64px;  
     background-color: rgba(246, 226, 226, 0.4);
     width: 100%;
@@ -22,11 +29,8 @@ footer {
     font-size: 1.2rem;
     text-align: center;
     background-color: rgba(246, 226, 226, 0.4);
-    margin: 0;
-    padding: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
+
+    min-width: 100%;
 }
 
 .fa-github {
@@ -65,18 +69,44 @@ button {
 
 .grid_container {
     display: grid;
-    grid-template-columns: repeat(3, 166px);
-    grid-template-rows: repeat(3, 166px);
+    grid-template-columns: repeat(1, 500px);
+    grid-template-rows: repeat(1, 500px);
     
 }
 
+.grid-item {
+    background-color: white;
+    filter: brightness(1);
+}
 
+
+.clickable:active {
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+#color_btn {
+    position: absolute;
+    margin-left: -50px;
+    height: 100px;
+    width: 100px;
+    border: 0;
+    opacity: 0;
+}
 
 .color_btn {
     border-radius: 50%;
     height: 100px;
     width: 100px;
-    background-color: black;
+    background: black;
+}
+
+#color_btn:focus + .color_btn {
+    border-color: black;
+}
+  
+#color_btn:active + .color_btn {
+    filter: brightness(90%);
 }
 
 .slider {
@@ -103,4 +133,45 @@ button {
     background-color: rgb(255, 120, 0);
     overflow: visible;
     cursor: pointer;
+}
+
+
+@media screen and (max-width: 1300px) {
+    .controller {
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .controller {
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .header, footer { 
+        width: 100vw;
+        margin: 0; 
+        padding: 0; 
+    }
+
+    .canvas {
+        width: 300px;
+        height: 300px;
+        margin-left: 1%;
+        margin-top: 20px;
+    }
+    .footer_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .header {
+        font-size: 48px;
+    }
 }

@@ -7,33 +7,29 @@
         <title>Etch-A-Sketch</title>
         <link rel="stylesheet" href="./style.css">
         <script src="https://kit.fontawesome.com/3ef20e5b59.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     </head>
     <body>
         <div class="header">Etch-A-Sketch</div>
 
         <div class="container"> 
             <div class="controller">
-                <button>Color pen</button>
-                <button class="color_btn"></button>
-                <button>Erase</button>
-                <button>Rainbow</button>
-                <button>Shading</button>
-                <button>Clear</button>
+                <div class="color_btn">
+                    <input id="color_btn" type="color"/>
+                </div>
+                <!-- <label class="color_btn" for="color_btn"></label> -->
+                <button class="clickable" id="erase_btn">Erase</button>
+                <button class="clickable" id="rainbow_btn">Rainbow</button>
+                <button class="clickable" id="shading_btn">Shading</button>
+                <button class="clickable" id="lighten_btn">Lighten</button>
+                <button class="clickable" id="clear_btn">Clear</button>
                 <p id="slider_value">1x1</p>
-                <input type="range" min="1" max="60" value="1" class="slider">
+                <input type="range" min="1" max="60" value="1" class="slider" id="slider">
 
             </div>    
 
-            <div class="canvas grid_container">
-                    <div class="grid-item">1</div>
-                    <div class="grid-item">2</div>
-                    <div class="grid-item">3</div>  
-                    <div class="grid-item">4</div>
-                    <div class="grid-item">5</div>
-                    <div class="grid-item">6</div>  
-                    <div class="grid-item">7</div>
-                    <div class="grid-item">8</div>
-                    <div class="grid-item">9</div>        
+            <div class="canvas grid_container" id="canvas">    
+               
             </div>
         </div>
 
