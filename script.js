@@ -1,5 +1,5 @@
 window.onload = () => {
-    buildCanvas(1)
+    buildCanvas(1);
 };
 
 var slider = document.querySelector('#slider');
@@ -13,7 +13,7 @@ var shadingBtn = document.getElementById('shading_btn');
 var eraseBtn = document.getElementById('erase_btn');
 var rainbowBtn = document.getElementById('rainbow_btn');
 var lightenBtn = document.getElementById('lighten_btn');
-
+var minWidth = 0;
 var globalColor = "#000000";
 var gridItems, gridItemLength;
 var action = 0;
@@ -30,7 +30,9 @@ function buildCanvas(sliderValue) {
     var height = document.getElementById('canvas').style.height;
     var h = window.getComputedStyle(document.getElementById("canvas"), null);
     var h2 = h.getPropertyValue('height');
-    var h3 = h2.slice(0, 3);
+    console.log(h2);
+    var h3 = minWidth ? '300' : h2.slice(0, 3);
+    console.log(h3);
     dimension = parseInt(h3) / parseInt(sliderValue);
     canvas.style.gridTemplateColumns = `repeat(${sliderValue}, ${dimension}px`;
     canvas.style.gridTemplateRows = `repeat(${sliderValue}, ${dimension}px`;
@@ -178,3 +180,7 @@ shadingBtn.addEventListener('click', () => {
 lightenBtn.addEventListener('click', () => {
     action = 4;
 });
+
+window.onresize(() => {
+    minWidth = window.innerHeight < 720;
+})
