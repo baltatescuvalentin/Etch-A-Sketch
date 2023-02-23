@@ -13,7 +13,7 @@ var shadingBtn = document.getElementById('shading_btn');
 var eraseBtn = document.getElementById('erase_btn');
 var rainbowBtn = document.getElementById('rainbow_btn');
 var lightenBtn = document.getElementById('lighten_btn');
-var minWidth = 0;
+var minWidth = window.innerWidth < 720;
 var globalColor = "#000000";
 var gridItems, gridItemLength;
 var action = 0;
@@ -181,6 +181,6 @@ lightenBtn.addEventListener('click', () => {
     action = 4;
 });
 
-window.onresize(() => {
-    minWidth = window.innerHeight < 720;
+window.addEventListener('resize', () => {
+    minWidth = window.innerWidth < 720;
 })
